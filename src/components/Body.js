@@ -1,6 +1,6 @@
 import RestroCard, {WithPromoted}  from "./RestroCard";
 import { useContext, useEffect, useState } from "react";
-import Shimmer from "./shimmer";
+import Shimmer from "./Shimmer";
 import {Link} from "react-router";
 import { API_CALL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";

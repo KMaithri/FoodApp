@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react";
 import { RES_API } from "./constants";
-import Shimmer from "../components/shimmer";
+import Shimmer from "../components/Shimmer";
 
 const useResInfo = (resId) => {
 

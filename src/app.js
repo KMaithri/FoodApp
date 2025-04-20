@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Error from "./components/Error";
 import ResInfo from "./components/ResInfo";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
-import Shimmer from "./components/shimmer";
+import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";

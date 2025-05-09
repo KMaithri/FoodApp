@@ -21,7 +21,7 @@ const MenuCategory = ({data, showItems, setShowIndex}) =>{
                 
                 {/* body ---> Calling Accordion Body component */}
                 <div className="py-2">
-                    {showItems && <ItemList items = {data.itemCards}/>}
+                    {showItems && <ItemList items = {data.itemCards} isAdd = {true} />}
                 </div>
             </div>
             

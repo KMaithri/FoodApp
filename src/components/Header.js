@@ -25,9 +25,7 @@ const Header = () => {
                 <ul className="flex m-2 border-0">
                     <li className="p-2 m-2">Online Status: {(onlineStatus) ? "✅" : "🔴"}</li>
                     <li className="p-2 m-2 hover:bg-orange-500 hover:text-white hover:font-bold hover:rounded-lg"><Link to="/">Home</Link></li>
-                    <li className="p-2 m-2 hover:bg-orange-500 hover:text-white hover:font-bold hover:rounded-lg"><Link to="/about">About us</Link></li>
-                    <li className="p-2 m-2 hover:bg-orange-500 hover:text-white hover:font-bold hover:rounded-lg"><Link to="/contact">Contact us</Link></li>
-                    <li className="p-2 m-2 hover:bg-orange-500 hover:text-white hover:font-bold hover:rounded-lg font-bold"> <Link to="/cart"> Cart - {cartItems.length} </Link></li>
+                    <li className="p-2 m-2 hover:bg-orange-500 hover:text-white hover:font-bold hover:rounded-lg font-bold"> <Link to="/cart"> Cart ({cartItems.length}) </Link></li>
                     {/* changing login button to logout and vice versa on click */}
                     <li className="p-2 m-2 hover:bg-orange-500 hover:text-white hover:font-bold hover:rounded-lg"><button onClick={ () => {
                         

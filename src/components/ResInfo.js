@@ -13,7 +13,7 @@ const ResInfo = () => {
     const[showIndex,setShowIndex] = useState(null);
     
     if(resInfo === null) return <Shimmer/>
-    
+    console.log(resInfo)
     
     const{
         name,

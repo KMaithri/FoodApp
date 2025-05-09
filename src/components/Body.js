@@ -16,7 +16,7 @@ const Body = () => {
     const RestuarantPromoted = WithPromoted(RestroCard);
 
     const fetchData  = async () =>  {
-        const data = await fetch("https://myresapp.netlify.app/api/data");
+        const data = await fetch("/api/data");
         const json = await data.json();
         console.log(json);
         if(json.data.cards[2].card.card.gridElements){

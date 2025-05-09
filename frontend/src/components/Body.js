@@ -16,9 +16,9 @@ const Body = () => {
     const RestuarantPromoted = WithPromoted(RestroCard);
 
     const fetchData  = async () =>  {
-        const data = await fetch(API_CALL);
+        const data = await fetch("http://localhost:3001/api/data");
         const json = await data.json();
-        // console.log(json);
+        console.log(json);
         if(json.data.cards[2].card.card.gridElements){
             // optional chaining
             setListOfRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);

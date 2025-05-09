@@ -12,7 +12,7 @@ const useResInfo = (resId) => {
 
     const fetchInfo = async() => {
         // const data = await fetch(RES_API + resId);
-        const data = await fetch(`http://localhost:3001/api/restaurant?id=${resId}`);
+        const data = await fetch(`https://myresapp.netlify.app/api/restaurant?id=${resId}`);
         const json = await data.json();
         // console.log(json)
         setResInfo(json.data);

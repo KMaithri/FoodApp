@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const MenuCategory = ({data, showItems, setShowIndex}) =>{
+const MenuCategory = ({data, showItems, setShowIndex, resId, resName}) =>{
     // console.log(data)
 
     // const[showItems, setShowItems] = useState(true);
@@ -21,7 +21,7 @@ const MenuCategory = ({data, showItems, setShowIndex}) =>{
                 
                 {/* body ---> Calling Accordion Body component */}
                 <div className="py-2">
-                    {showItems && <ItemList items = {data.itemCards} isAdd = {true} />}
+                    {showItems && <ItemList items = {data.itemCards} isAdd = {true} resId = {resId} resName = {resName} />}
                 </div>
             </div>
             

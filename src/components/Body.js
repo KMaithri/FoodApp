@@ -60,7 +60,7 @@ const Body = () => {
                         setFilteredRestaurants(filtered_search);
                     }}></input>
                     {/* top rated restaurants  */}
-                <button className="bg-orange-600  text-white cursor-pointer hover:bg-orange-700 hover:font-bold p-2 mx-2" onClick={ () => {
+                    <button className="bg-orange-600  text-white cursor-pointer hover:bg-orange-700 hover:font-bold p-2 mx-2" onClick={ () => {
                     const filtered_text = listOfRestaurants.filter((restaurant) => restaurant.info.avgRating > 4);
                     setFilteredRestaurants(filtered_text);
                     }

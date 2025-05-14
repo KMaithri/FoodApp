@@ -1,16 +1,33 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CDN_URL } from "../utils/constants";
-import { addItem,removeItem } from "../utils/cartSlice";
+import { addItem,removeItem,addResName, addResId } from "../utils/cartSlice";
 
-const ItemList = ({items,isAdd}) => {
+const ItemList = ({items,isAdd,resName,resId}) => {
     // console.log("items====",items)
+    const cartResName = useSelector((store) => store.cart.resName);
+    const cartItems = useSelector((store) => store.cart.items);
+    // console.log(resName)
+    // console.log(cartResName)
+
     const dispatch = useDispatch();
     const handleAddItem = (item) => {
-        dispatch(addItem(item))
+        if(cartResName === resName){
+            dispatch(addItem(item));
+        }else if(cartResName === "" || cartItems.length === 0){
+            
+            dispatch(addItem(item))
+            dispatch(addResName(resName));
+            dispatch(addResId(resId));
+        }else{
+            alert("You cannot add items from different restaurants at once, please add items only from " + cartResName + " or empty your cart to continue")
+        }
+        
     }
+
     const handleDeleteItem =(id) => {
         dispatch(removeItem(id))
     }
+    
     return(
         
         <div>

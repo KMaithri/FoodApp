@@ -8,7 +8,8 @@ const Cart = () =>{
 
     // subscribing to the store to get the items in the cart
     let cartItems = useSelector((store) => store.cart.items)
-    console.log(cartItems)
+    const resId = useSelector((store) => store.cart.resId)
+    // console.log(cartItems)
     // console.log(cartItems)
     // calculating total price for the items in the cart
     const [totalPrice, setTotalPrice] = useState(0);
@@ -42,10 +43,10 @@ const Cart = () =>{
             <div className="w-9/12 mx-auto">
                 {cartItems.length > 0 ? <ItemList items = {cartItems} isAdd = {false}/> : <h1 className="font-bold text-xl m-6">Oops! Your cart is empty, add items to your cart</h1>}
                 {cartItems.length == 0 ? <button className="border-2 border-red-600 text-red-600 font-bold p-4 m-4 rounded-lg cursor-pointer hover:bg-red-600 hover:text-white hover:font-bold"><Link to="/">Browse Restaurants</Link></button> : ""}
-                {cartItems.length > 0 ? <p className="text-lg font-bold text-right m-4"> To Pay {Math.round(totalPrice)}</p> : ""}
+                {cartItems.length > 0 ? <p className="text-lg font-bold text-right m-4"> To Pay {totalPrice.toFixed(2)}</p> : ""}
                 
             </div>
-            
+            {cartItems.length > 0 ? <Link to={"/restaurant/" + resId}><button className="border-2 border-gray-600 text-gray-600 font-bold p-4 m-4 rounded-lg cursor-pointer hover:bg-gray-600 hover:text-white hover:font-bold">Add Items</button></Link> : ""}
             {/* {cartItems.length > 0 ? <button className="border-2 border-gray-600 text-gray-600 font-bold p-4 m-4 rounded-lg cursor-pointer hover:bg-gray-600 hover:text-white hover:font-bold" onClick={handleClearItems}>Add items</button> : ""} */}
             {cartItems.length > 0 ? <button className="border-2 border-red-600 text-red-600 font-bold p-4 m-4 rounded-lg cursor-pointer hover:bg-red-600 hover:text-white hover:font-bold" onClick={handleClearItems}>Clear Cart</button> : ""}
             

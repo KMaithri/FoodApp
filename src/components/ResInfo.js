@@ -21,7 +21,8 @@ const ResInfo = () => {
         avgRating,
 		costForTwoMessage,
 		sla,
-        areaName
+        areaName,
+        id
     } = resInfo.cards[2]?.card?.card?.info;
 
     
@@ -46,6 +47,8 @@ const ResInfo = () => {
                 key={card?.card?.card?.title}  
                 data = {card?.card?.card}
                 showItems = {index == showIndex ? true: false}
+                resId = {id}
+                resName = {name}
                 setShowIndex = {() => setShowIndex(index)}/>)
                }
                 

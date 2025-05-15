@@ -54,19 +54,19 @@ const Body = () => {
             <div className="flex flex-wrap">
                 {/* Search bar functionality */}
                 
-                    <input className="border-1 px-4 resize" type="text" value={searchText} placeholder="Search for Restaurant" onChange={(event) => {
+                    <input className="border-1 px-4 resize my-2 mx-1 sm:mx-4 sm:my-0 " type="text" value={searchText} placeholder="Search for Restaurant" onChange={(event) => {
                         setSearchText(event.target.value);
                         const filtered_search = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                         setFilteredRestaurants(filtered_search);
                     }}></input>
                     {/* top rated restaurants  */}
-                    <button className="bg-orange-600  text-white cursor-pointer hover:bg-orange-700 hover:font-bold p-2 mx-4" onClick={ () => {
+                    <button className="bg-orange-600  text-white cursor-pointer hover:bg-orange-700 hover:font-bold p-2 mx-1 my-2 sm:my-0 sm:mx-4" onClick={ () => {
                         const filtered_text = listOfRestaurants.filter((restaurant) => restaurant.info.avgRating > 4);
                         setFilteredRestaurants(filtered_text);
                         }
                     }
                    >Top rated restaurants</button>
-                    <button className="bg-green-400  hover:bg-green-600 hover:text-white hover:font-bold p-2 cursor-pointer mx-4" onClick={ ()=> {
+                    <button className="bg-green-400  hover:bg-green-600 hover:text-white hover:font-bold p-2 cursor-pointer mx-1 my-2 sm:my-0 sm:mx-4" onClick={ ()=> {
                         // const filtered_search = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                         setFilteredRestaurants(listOfRestaurants);
                         setSearchText("");

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 
 class UserClass extends React.Component{
@@ -23,7 +24,7 @@ class UserClass extends React.Component{
         this.setState({
             user:{
                 name:json.name,
-                url: json.url
+                url: json.html_url
             }
         })
     }
@@ -44,7 +45,7 @@ class UserClass extends React.Component{
             <div className="text-center">
                 <h1 className="text-2xl font-bold my-4">About</h1>
                 <h2 className="text-xl my-4">{name}</h2>
-                {/* <h2 className="my-4">{url}</h2> */}
+                <h2 className="my-4">Checkout my github page @ <Link className="border-b-2" to={url}>click</Link></h2>
             </div>
         )
     }

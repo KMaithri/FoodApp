@@ -11,7 +11,6 @@ const MenuCategory = ({data, showItems, setShowIndex, resId, resName}) =>{
         setShowIndex();
     }
     return (
-        <div>
             <div className="shadow-xl p-4 m-4 ">
                 {/* header */}
                 <div className="flex justify-between cursor-pointer" onClick={Accordion} >
@@ -25,8 +24,6 @@ const MenuCategory = ({data, showItems, setShowIndex, resId, resName}) =>{
                 </div>
             </div>
             
-            
-        </div>
     )
 }
 

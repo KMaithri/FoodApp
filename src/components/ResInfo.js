@@ -34,7 +34,7 @@ const ResInfo = () => {
     return(
 
         <div>
-            <div className="w-8/12 text-center m-auto ">
+            <div className="w-10/12 text-center m-auto ">
                 <h1 className="text-4xl">{name}</h1>
                 <h3 className="my-2 font-bold">{avgRating} .{costForTwoMessage}</h3>
                 <p className="my-2">{cuisines.join(", ")}</p>

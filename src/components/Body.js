@@ -2,7 +2,6 @@ import RestroCard, {WithPromoted}  from "./RestroCard";
 import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router";
-import { API_CALL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 
@@ -10,6 +9,7 @@ const Body = () => {
     const [listOfRestaurants,setListOfRestaurant] = useState([]);
     const [filteredRestaurants,setFilteredRestaurants] = useState([]);
     const [searchText, setSearchText] = useState("");
+    
 
     const {loggedInUser, setUserName} = useContext(UserContext);
 
@@ -18,7 +18,7 @@ const Body = () => {
     const fetchData  = async () =>  {
         const data = await fetch("/api/data");
         const json = await data.json();
-        console.log(json);
+        // console.log(json);
         if(json.data.cards[2].card.card.gridElements){
             // optional chaining
             setListOfRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -48,7 +48,7 @@ const Body = () => {
     //  ternary conditional rendering
 
     return (
-        <div >
+        <div className="w-10/12 mx-auto">
             <h2 className="font-bold text-3xl my-[10]">{filteredRestaurants.length} results </h2>
             {/* <h2>Welcome, {loggedInUser}</h2> */}
             <div className="flex flex-wrap">
@@ -60,13 +60,13 @@ const Body = () => {
                         setFilteredRestaurants(filtered_search);
                     }}></input>
                     {/* top rated restaurants  */}
-                    <button className="bg-orange-600  text-white cursor-pointer hover:bg-orange-700 hover:font-bold p-2 mx-2" onClick={ () => {
-                    const filtered_text = listOfRestaurants.filter((restaurant) => restaurant.info.avgRating > 4);
-                    setFilteredRestaurants(filtered_text);
+                    <button className="bg-orange-600  text-white cursor-pointer hover:bg-orange-700 hover:font-bold p-2 mx-4" onClick={ () => {
+                        const filtered_text = listOfRestaurants.filter((restaurant) => restaurant.info.avgRating > 4);
+                        setFilteredRestaurants(filtered_text);
+                        }
                     }
-                }
                    >Top rated restaurants</button>
-                    <button className="bg-green-400  hover:bg-green-600 hover:text-white hover:font-bold p-2 cursor-pointer " onClick={ ()=> {
+                    <button className="bg-green-400  hover:bg-green-600 hover:text-white hover:font-bold p-2 cursor-pointer mx-4" onClick={ ()=> {
                         // const filtered_search = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                         setFilteredRestaurants(listOfRestaurants);
                         setSearchText("");
